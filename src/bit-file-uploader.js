@@ -38,7 +38,22 @@ import ViewModel from './viewmodel';
 can.Component.extend({
 	tag: 'bit-file-uploader',
 	template: template,
-	viewModel: ViewModel
+	viewModel: ViewModel,
+    events:{
+        /**
+		 * @function 
+         * @description Adds files to the local object.
+         * @param {Object} options The Stache helper options object.
+         */
+        '.file-upload change':function( $el ){
+            var files = $el.prop('files'),
+                vm = this.scope;
+
+            can.each(files, function (file) {
+                vm.addFile(file);
+            });
+        }
+    }
 });
 
 export default ViewModel;

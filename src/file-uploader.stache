@@ -1,12 +1,11 @@
-<div class="search-container">
-    <div class="search-form">
-        <input type="text" id="{{searchFieldId}}" class="search-field">
-    </div>
-    {{#results.length}}
-        <ul class="search-results">
-        {{#results}}
-            <li><button can-click="selectItem" class="search-results-item" data-context="{{.}}" type="button">{{getItem}}</button></li>
-        {{/results}}
-        </ul>
-    {{/results.length}}
+<div class="file-upload-container">
+    <input
+        type="file"
+        name="file-upload"
+        class="file-upload {{#fileReady}}file-upload-ready{{/fileReady}}"
+        {{#fileTypes.length}}accept="{{fileTypeList}}"{{/fileTypes.length}}
+        {{#isMultiple}} multiple {{/isMultiple}}
+        id="{{fileUploadId}}"
+    />
+    {{#fileTypes.length}}<p class="file-upload-types">{{fileTypeList}}</p>{{/fileTypes.length}}
 </div>

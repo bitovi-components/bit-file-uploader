@@ -26,6 +26,7 @@ export default can.Map.extend({
                 return this.attr('files').length;
             }
         },
+        
         /**
          * @function file-uploader.scope.fileTypeList fileTypeList
          * @description Stringifys the valid file type array.
@@ -37,22 +38,49 @@ export default can.Map.extend({
                 return fileTypes ? fileTypes.join(', ') : '';
             }
         },
+
+        /**
+         * @property {can.List} file-uploader.scope.files files
+         * @description Manages the selected files.
+         * @option {can.List} Default is empty array.
+         */
         files:{
             value:[]
         },
-        
+
+        /**
+         * @property {can.List} file-uploader.scope.fileTypes fileTypes
+         * @description The file types array passed in during instantiation.
+         * @option {can.List} Default is empty array.
+         */
         fileTypes: {
             value: []
         },
-        
-        formData: {
+
+        /**
+         * @property {FormData} file-uploader.scope.formData formData
+         * @description The `FormData` object that manages files for XMLHTTPRequests.
+         * @option {FormData} Default is empty `FormData`.
+         */
+        fileData: {
             Value: FormData
         },
-        
+
+        /**
+         * @property {string} file-uploader.scope.isReady isReady
+         * @description True when at least one file has been selected.
+         * @option {string} Default is `false`.
+         */
         isReady: {
             value: false,
             type: 'boolean'
         },
+
+        /**
+         * @property {string} file-uploader.scope.fileUploadId fileUploadId
+         * @description The unqiue input id.
+         * @option {string} Default is `fileupload<random number>`.
+         */
         fileUploadId: {
             value: function () {
                 return 'fileupload' + Math.floor( Math.random() * 1000000 );
@@ -70,7 +98,7 @@ export default can.Map.extend({
     addFile:function(file){
 
         var files = this.attr('files'),
-            data = this.attr('formData');
+            data = this.attr('fileData');
 
 
         data.append(file.name,file);

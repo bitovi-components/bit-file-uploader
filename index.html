@@ -1,0 +1,17 @@
+<!-- Template to load -->
+<script type="text/stache" id="demo" can-autorender>
+  <can-import from="bit-file-uploader"/>
+  <bit-file-uploader></bit-file-uploader>
+</script>
+
+<!-- Loading Script -->
+<script src="./node_modules/steal/steal.js" main="can/view/autorender/">
+	import $ from "jquery";
+	import can from "can";
+    
+    $("#demo").viewModel().attr({
+        Search: Search,
+        selectedItem: {},
+        valdated: false
+    });
+</script>

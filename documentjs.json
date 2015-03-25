@@ -1,0 +1,18 @@
+{
+    "sites": {
+        "docs": {
+            "glob" : {
+              "pattern": "./**/*.{js,md}",
+              "ignore": "./{bower_components,node_modules,docs}/**/*.*"
+            },
+            "dest" : "./docs",
+            "parent" : "file-uploader",
+            "package":{
+                "repository": {
+                    "github": "https://github.com/bitovi-components/bit-file-uploader"
+                },
+                "version":"0.0.1"
+            }
+        }
+    }
+}

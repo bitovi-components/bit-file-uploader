@@ -10,7 +10,7 @@ module.exports = function (grunt) {
   	grunt.loadNpmTasks('documentjs');
 	
 	var config = {
-		documentjs:{},
+		documentjs: docConfig,
 		testee: {
 			options: {
 				reporter: 'Spec'
@@ -46,7 +46,6 @@ module.exports = function (grunt) {
 		}
 	};
 	
-	config.documentjs = docConfig;
 	grunt.initConfig(config);
 	grunt.registerTask('server',['serve']);
 	grunt.registerTask('build',['steal-export']);

@@ -18,6 +18,7 @@ QUnit.test('basics', function(){
 	vm = new ViewModel({});
 	
 	equal( can.isEmptyObject( vm.attr() ), false, 'ViewModel has properties.');
+	equal( vm.attr('filesCount'), 0, 'Files length is 0.' );
 });
 
 QUnit.module('bit-file-uploader component',{

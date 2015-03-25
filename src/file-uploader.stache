@@ -2,7 +2,7 @@
     <input
         type="file"
         name="file-upload"
-        class="file-upload {{#fileReady}}file-upload-ready{{/fileReady}}"
+        class="file-upload {{#isReady}}file-upload-ready{{/isReady}}"
         {{#fileTypes.length}}accept="{{fileTypeList}}"{{/fileTypes.length}}
         {{#isMultiple}} multiple {{/isMultiple}}
         id="{{fileUploadId}}"

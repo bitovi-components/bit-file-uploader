@@ -67,9 +67,19 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {string} file-uploader.scope.isReady isReady
+         * @property {boolean} file-uploader.scope.isMultiple isMultiple
+         * @description Sets file control to multiple-file mode.
+         * @option {boolean} Default is `false`.
+         */
+        isMultiple: {
+            value: false,
+            type: 'boolean'
+        },
+
+        /**
+         * @property {boolean} file-uploader.scope.isReady isReady
          * @description True when at least one file has been selected.
-         * @option {string} Default is `false`.
+         * @option {boolean} Default is `false`.
          */
         isReady: {
             value: false,

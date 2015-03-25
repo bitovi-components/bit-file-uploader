@@ -1,5 +1,5 @@
 {
-  "name": "bit-autocomplete",
+  "name": "bit-file-uploader",
   "version": "0.0.1",
   "description": "",
   "main": "dist/cjs/bit-file-uploader",

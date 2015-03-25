@@ -37,6 +37,7 @@
     "main": "bit-file-uploader",
     "npmIgnore": [
       "testee",
+      "documentjs",
       "cssify"
     ],
     "directories": {

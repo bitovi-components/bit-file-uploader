@@ -3,7 +3,7 @@ import can from 'can';
 import QUnit from 'steal-qunit';
 import 'can/view/stache/';
 
-import ViewModel from 'bit-file-uploader';
+import ViewModel from 'file-uploader';
 //Steal has finished loading at this point so we just need to make sure Testee is ready
 
 var vm, template, $component;

@@ -1,6 +1,8 @@
 /**
  * @module {can.Component} file-uploader File Uploader
  * @parent file-uploader
+ * @group file-uploader/events 0 Events
+ * @group file-uploader/viewModel 1 ViewModel
  * @author Juan Orozco
  *
  *
@@ -11,10 +13,10 @@
  * @signature '<bit-file-uploader></bit-file-uploader>'
  *
  * @param {can.List} files A storage container for added files.
- * @param {can.List} fileTypes Whitelist of file types.
- * @param {FormData} formData A [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object with all files appended to it.
- * @param {boolean} isMultiple Flag for setting control to multiple mode.
- * @param {string} fileUploadId Used as the ID of the file upload component. A random ID is generated if not provided.
+ * @param {can.List} file-types Whitelist of file types.
+ * @param {FormData} form-data A [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object with all files appended to it.
+ * @param {boolean} is-multiple Flag for setting control to multiple mode.
+ * @param {string} file-upload-id Used as the ID of the file upload component. A random ID is generated if not provided.
  *
  *
  * @body
@@ -31,7 +33,7 @@
  *   <bit-file-uploader is-multiple="true" file-types="{fileTypes}" files="{files}"></bit-file-uploader>
  * ```
  *
- * @demo index.html
+ * @demo ../index.html
  */
 import can from 'can';
 import 'can/view/stache/';
@@ -46,7 +48,8 @@ can.Component.extend({
 	viewModel: ViewModel,
     events:{
         /**
-		 * @function file-uploader.fileInputChangeEvent File Input Change Event Handler
+		 * @function file-uploader.events.fileInputChangeEvent File Input Change Event Handler
+		 * @parent file-uploader/events
          * @description Adds files to the local object.
          * @param {selector} $el The input control that triggered the event.
          */

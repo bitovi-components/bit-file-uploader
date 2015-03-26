@@ -1,39 +1,43 @@
 <!-- Template to load -->
 <script type="text/stache" id="demo" can-autorender>
-  <can-import from="bit-file-uploader"/>
-  {{! Basic configuration of control, just upload any single file.}}
-  <h3>Single File</h3>
-  <bit-file-uploader files="{filesA}"></bit-file-uploader>
-  <p>You have uploaded {{filesA.length}} file{{pluralSuffix filesA.length}}.</p>
-  
-  {{! With is-multiple flag, upload any file, as many as needed.}}
-  <h3>Multiple File</h3>
-  <bit-file-uploader files="{filesB}" is-multiple="true"></bit-file-uploader>
-  <p>You have uploaded {{filesB.length}} file{{pluralSuffix filesB.length}}.</p>
-  
-  {{! Limit the allowable file types. Can also work with multiples.}}
-  <h3>Limited File Types</h3>
-  <bit-file-uploader files="{filesC}" file-types="{fileTypes}"></bit-file-uploader>
-  <p>You have uploaded {{filesC.length}} file{{pluralSuffix filesC.length}}.</p>
+<can-import from="file-uploader"/>
+{{! Basic configuration of control, just upload any single file.}}
+<h3>Single File</h3>
+<bit-file-uploader files="{filesA}"></bit-file-uploader>
+<p>You have uploaded {{filesA.length}} file{{pluralSuffix filesA.length}}.</p>
+
+{{! With is-multiple flag, upload any file, as many as needed.}}
+<h3>Multiple File</h3>
+<bit-file-uploader files="{filesB}" is-multiple="true"></bit-file-uploader>
+<p>You have uploaded {{filesB.length}} file{{pluralSuffix filesB.length}}.</p>
+
+{{! Limit the allowable file types. Can also work with multiples.}}
+<h3>Limited File Types</h3>
+<bit-file-uploader files="{filesC}" file-types="{fileTypes}"></bit-file-uploader>
+<p>You have uploaded {{filesC.length}} file{{pluralSuffix filesC.length}}.</p>
 </script>
 
 <!-- Loading Script -->
-<script src="./node_modules/steal/steal.js" main="can/view/autorender/">
-	import $ from "jquery";
-	import can from "can";
-    
-    $("#demo").viewModel().attr({
-        filesA: [],
-        filesB: [],
-        filesC: [],
-        fileTypes: ['text/csv','text/rtf'],
-        pluralSuffix: function (countFn) {
-            var count = countFn();
-            if (count && count === 1 ) {
-                return '';
-            } else {
-                return 's';
-            }
+<script src="./node_modules/steal/steal.js" main="can/view/autorender/" id="demo_source">
+import $ from "jquery";
+import can from "can";
+
+$("#demo").viewModel().attr({
+    filesA: [],
+    filesB: [],
+    filesC: [],
+    fileTypes: ['text/csv','text/rtf'],
+    pluralSuffix: function (countFn) {
+        var count = countFn();
+        if (count && count === 1 ) {
+            return '';
+        } else {
+            return 's';
         }
-    });
+    }
+});
 </script>
+<script>
+    window.DEMO_HTML = document.getElementById("demo").innerHTML.replace('<can-import from="file-uploader"/>', '');
+    window.DEMO_SOURCE = document.getElementById("demo_source").innerHTML;
+ </script>

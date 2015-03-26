@@ -1,8 +1,8 @@
 {
-  "name": "bit-file-uploader",
+  "name": "file-uploader",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/cjs/bit-file-uploader",
+  "main": "dist/cjs/file-uploader",
   "browser": {
     "transform": [
       "cssify"
@@ -18,7 +18,7 @@
     "prepublish": "./node_modules/.bin/grunt build"
   },
   "dependencies": {
-    "can": "bitovi/canjs",
+    "can": "^2.2.1",
     "cssify": "^0.6.0"
   },
   "devDependencies": {
@@ -29,12 +29,12 @@
     "grunt-serve": "^0.1.6",
     "jquery": ">1.9.0",
     "steal": "^0.7.1",
-    "steal-qunit": "^0.0.2",
+    "steal-qunit": "^0.0.3",
     "steal-tools": "^0.7.1",
     "testee": "^0.1.8"
   },
   "system": {
-    "main": "bit-file-uploader",
+    "main": "file-uploader",
     "npmIgnore": [
       "testee",
       "documentjs",

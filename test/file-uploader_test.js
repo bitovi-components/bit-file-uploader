@@ -43,7 +43,7 @@ QUnit.module('bit-file-uploader component',{
 		template = can.stache('<bit-file-uploader></bit-file-uploader>');
 		$('#qunit-fixture').append(template({}));
 		$component = $('bit-file-uploader',$('#qunit-fixture') );
-		vm = $component.data('scope');
+		vm = can.viewModel($component);
 	}
 });
 

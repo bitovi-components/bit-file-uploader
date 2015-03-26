@@ -1,14 +1,3 @@
-/**
- * @module {can.Map} file-uploader/ViewModel View Model
- * @parent file-uploader
- * @author Juan Orozco
- *
- * @description View model of the [file-uploader] component.
- *
- * @signature
- * var ViewModel = can.Map.extend({});
- *
- */
 import can from 'can';
 import 'can/map/define/';
 
@@ -16,7 +5,8 @@ export default can.Map.extend({
     define:{
         
         /**
-         * @function file-uploader.scope.filesCount filesCount
+         * @function file-uploader.viewModel.filesCount filesCount
+         * @parent file-uploader/viewModel
          * @description The current number of selected files.
          * @return {Number} Returns the length of the files array.
          */
@@ -28,7 +18,8 @@ export default can.Map.extend({
         },
         
         /**
-         * @function file-uploader.scope.fileTypeList fileTypeList
+         * @function file-uploader.viewModel.fileTypeList fileTypeList
+         * @parent file-uploader/viewModel
          * @description Stringifys the valid file type array.
          * @return {String} A comma separate list of file types.
          */
@@ -40,7 +31,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {can.List} file-uploader.scope.files files
+         * @property {can.List} file-uploader.viewModel.files files
+         * @parent file-uploader/viewModel
          * @description Manages the selected files.
          * @option {can.List} Default is empty array.
          */
@@ -49,7 +41,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {can.List} file-uploader.scope.fileTypes fileTypes
+         * @property {can.List} file-uploader.viewModel.fileTypes fileTypes
+         * @parent file-uploader/viewModel
          * @description The file types array passed in during instantiation.
          * @option {can.List} Default is empty array.
          */
@@ -58,7 +51,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {FormData} file-uploader.scope.formData formData
+         * @property {FormData} file-uploader.viewModel.formData formData
+         * @parent file-uploader/viewModel
          * @description The `FormData` object that manages files for XMLHTTPRequests.
          * @option {FormData} Default is empty `FormData`.
          */
@@ -67,7 +61,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {boolean} file-uploader.scope.isMultiple isMultiple
+         * @property {boolean} file-uploader.viewModel.isMultiple isMultiple
+         * @parent file-uploader/viewModel
          * @description Sets file control to multiple-file mode.
          * @option {boolean} Default is `false`.
          */
@@ -77,7 +72,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {boolean} file-uploader.scope.isReady isReady
+         * @property {boolean} file-uploader.viewModel.isReady isReady
+         * @parent file-uploader/viewModel
          * @description True when at least one file has been selected.
          * @option {boolean} Default is `false`.
          */
@@ -87,7 +83,8 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {string} file-uploader.scope.fileUploadId fileUploadId
+         * @property {string} file-uploader.viewModel.fileUploadId fileUploadId
+         * @parent file-uploader/viewModel
          * @description The unqiue input id.
          * @option {string} Default is `fileupload<random number>`.
          */
@@ -100,7 +97,8 @@ export default can.Map.extend({
     },
     
     /**
-     * @function file-uploader.scope.addFile addFile
+     * @function file-uploader.viewModel.addFile addFile
+     * @parent file-uploader/viewModel
      * @description Chceks if file is a valid object and a valid file type, then adds it to the file arrays.
      * @param {Object} file A file object.
      * @return {Array} List of cached files.
